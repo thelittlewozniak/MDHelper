@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28803.156
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MDHelperAPI", "MDHelperAPI\MDHelperAPI.csproj", "{AABF4E92-8C3A-49BC-A736-B507D900305F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repository", "Repository\Repository.csproj", "{DD656BE3-2FF0-4F7A-9892-A821F3A9F726}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AABF4E92-8C3A-49BC-A736-B507D900305F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AABF4E92-8C3A-49BC-A736-B507D900305F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AABF4E92-8C3A-49BC-A736-B507D900305F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AABF4E92-8C3A-49BC-A736-B507D900305F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD656BE3-2FF0-4F7A-9892-A821F3A9F726}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD656BE3-2FF0-4F7A-9892-A821F3A9F726}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD656BE3-2FF0-4F7A-9892-A821F3A9F726}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD656BE3-2FF0-4F7A-9892-A821F3A9F726}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8A7BEA7A-BCB1-4283-A85B-785BFA89447D}
+	EndGlobalSection
+EndGlobal
