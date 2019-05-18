@@ -1,0 +1,11 @@
+#card {
+    height: 90vh;
+    text-align: center;
+}
+#qrScan {
+    width: 80vw;
+}
+div[_nghost-lga-c3] video[_ngcontent-lga-c3] {
+    display: block;
+    margin: 0 auto;
+}
