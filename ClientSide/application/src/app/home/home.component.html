@@ -1,0 +1,10 @@
+<mat-card id="card">
+  <form *ngIf="!this.generated" class="formUsername">
+    <mat-form-field class="formField">
+        <input matInput placeholder="Enter your username" [(ngModel)]="this.username" name="username">
+    </mat-form-field>
+  </form>
+  <button mat-raised-button color="warn" (click)="this.generate()" *ngIf="!this.generated">Generate your qrCode</button>
+  <qr-code *ngIf="this.generated" [value]="this.username" [size]="250"></qr-code><br>
+  <button mat-raised-button color="warn" (click)="this.ungenerate()" *ngIf="this.generated">Go back</button>
+</mat-card>
