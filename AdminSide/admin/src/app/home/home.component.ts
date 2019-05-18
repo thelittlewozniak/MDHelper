@@ -1,6 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { QrScannerComponent } from 'angular2-qrscanner';
 import { MatSnackBar } from '@angular/material';
+import { HttpClient } from '@angular/common/http';
+import { User } from '../model/user';
 
 @Component({
   selector: 'app-home',
@@ -10,7 +12,8 @@ import { MatSnackBar } from '@angular/material';
 export class HomeComponent implements OnInit {
 
   constructor(
-    private snackBar: MatSnackBar
+    private snackBar: MatSnackBar,
+    private http: HttpClient
     ) { }
 
   @ViewChild(QrScannerComponent) qrScannerComponent: QrScannerComponent ;
@@ -26,7 +29,7 @@ export class HomeComponent implements OnInit {
           if (videoDevices.length > 0) {
               let choosenDev;
               for (const dev of videoDevices) {
-                  if (dev.label.includes('front')) {
+                  if (dev.label.includes('back')) {
                       choosenDev = dev;
                       break;
                   }
@@ -41,9 +44,20 @@ export class HomeComponent implements OnInit {
 
       this.qrScannerComponent.capturedQr.subscribe(result => {
           console.log(result);
-          this.snackBar.open(result + ' found', 'ok', {
-            duration: 2000,
-          });
+          let u = new User();
+          u.username = result;
+          this.http.post('https://wamdhelperapi.azurewebsites.net/api/User', u).subscribe(
+            (res) => {
+              console.log(res);
+              if (res) {
+                this.snackBar.open(result + ' added', 'ok', {
+                  duration: 2000,
+                });
+              }
+            }, (err) => {
+              console.log(err);
+            }
+          );
       });
   }
 }

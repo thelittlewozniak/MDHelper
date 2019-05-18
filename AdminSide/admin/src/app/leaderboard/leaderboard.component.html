@@ -1,3 +1,5 @@
-<p>
-  leaderboard works!
-</p>
+<mat-card *ngFor="let user of this.users">
+    <mat-card-header>
+        <mat-card-title (click)="this.delete(user.id)">{{user.username}}</mat-card-title>
+      </mat-card-header>
+</mat-card>

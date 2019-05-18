@@ -31,12 +31,12 @@ namespace MDHelperAPI.Controllers
                 return await userRepository.Add(u);
             }
         }
-        [HttpDelete]
-        public async Task<bool> Delete(User u)
+        [HttpDelete("{id}")]
+        public async Task<bool> Delete(int id)
         {
             using (IRepository<User> userRepository = new UserRepository(context))
             {
-                return await userRepository.Delete(u.Id);
+                return await userRepository.Delete(id);
             }
         }
     }

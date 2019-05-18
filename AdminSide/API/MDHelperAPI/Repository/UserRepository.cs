@@ -23,12 +23,13 @@ namespace Repository
         }
         public async Task<bool> Add(User u)
         {
-            var user = await context.Users.FirstOrDefaultAsync(us => us.Username == us.Username);
+            var user = await context.Users.FirstOrDefaultAsync(us => us.Username == u.Username);
             if (user != null) return false;
             try
             {
 
                 await context.Users.AddAsync(u);
+                await context.SaveChangesAsync();
             }
             catch (Exception)
             {
@@ -43,6 +44,7 @@ namespace Repository
             try
             {
                 context.Users.Remove(user);
+                await context.SaveChangesAsync();
             }
             catch (Exception)
             {
